@@ -17,7 +17,12 @@ public class DuckDbExample {
 		
 		// create a table
 		Statement stmt = conn.createStatement();
-//		stmt.execute("CREATE TABLE table2 (id VARCHAR, value DECIMAL(10, 2), count INTEGER)");
+		stmt.execute("CREATE TABLE items (id VARCHAR, value DECIMAL(10, 2), count INTEGER)");
+		
+		// insert two items into the table
+		stmt.execute("INSERT INTO items VALUES ('jeans', 20.0, 1), ('nail', 42.2, 2), ('hammer', 42.2, 2)");
+
+		stmt.execute("CREATE TABLE table2 (id VARCHAR, value DECIMAL(10, 2), count INTEGER)");
 		
 		// insert two items into the table
 		stmt.execute("INSERT INTO table2 VALUES ('jeans', 20.0, 1), ('nail', 42.2, 2), ('hammer', 42.2, 2)");
